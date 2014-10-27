@@ -1,0 +1,42 @@
+<script type='text/javascript'>
+	window.funcionarios = <%- JSON.stringify(funcionarios) %>;
+	window.content = <%- JSON.stringify(_content) %>;
+</script>
+<div ng-controller='funcionarioCTL' >
+	<p><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nuevo Funcionario</button></p>
+	<br/>	
+
+	<div directory-listing 
+		objects='funcionarios' 
+		keywords='searchInput' 
+		dir='funcionarios' 
+		edit-url='/funcionario/edit/' 
+		get-info='getInfo'
+		name-var='nombre_completo'
+	>
+	</div>
+	<div class="clearfix"></div>
+	<div class="span6">
+		<div class="alert alert-block unseen funcionarioAlert">
+			<button data-dismiss="alert" class="close" type="button">×</button>
+			<h4>Mensaje</h4>
+			<p>El funcionario se creo exitosamente</p>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div 
+					form-helper 
+			        fields='content.seasonScheme' 
+			        form-footer='Agregar Esquema'
+			        form-save = 'addScheme'
+			        object = 'scheme'
+			        form-title='INFORMACIÓN BASICA'
+			       	modal='true'
+			        >
+			    </div>	
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<script type='text/javascript'>
+    window.user = <%- JSON.stringify(user) %>;
+    window.content = <%- JSON.stringify(_content) %>;
+</script>
+<div ng-controller='userEditCTL'>
+    <div class="span4 profile-left profileEdit">
+        <div class="alert alert-block unseen">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <h4>Mensaje</h4>
+            <p style="margin: 8px 0">El usuario se ha actualizado exitosamente</p>
+        </div>
+
+        <div profile-image object='user' update-method='/user/updateIcon' delete-method='/user/destroyIcon' image-attr='icon' dir='users'></div>
+   
+    </div>
+    <div class="span6">
+        <div form-helper 
+            fields='content.user' 
+            object='user' 
+            action='/user/save' 
+            form-title='INFORMACIÓN BASICA'>
+        </div> 
+
+        <div form-helper 
+            fields='content.userPass' 
+            object='user' 
+            action='/user/savePass' 
+            form-title='Cambiar contraseña'
+            form-save='savePass'
+            >
+        </div> 
+
+    </div>
+</div>

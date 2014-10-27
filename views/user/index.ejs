@@ -1,0 +1,35 @@
+<script type='text/javascript'>
+	window.users = <%- JSON.stringify(users) %>;
+	window.content = <%- JSON.stringify(_content) %>;
+</script>
+<div ng-controller='userCTL' >
+	<p><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nuevo Usuario</button></p>
+	<br/>	
+
+	<div directory-listing objects='users' keywords='searchInput' dir='users' edit-url='/user/edit/' get-info='getInfo' ></div>
+
+	<div class="clearfix"></div>
+	<div class="span6">
+		<div class="alert alert-block unseen userAlert">
+			<button data-dismiss="alert" class="close" type="button">×</button>
+			<h4>Mensaje</h4>
+			<p>El user se creo exitosamente</p>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div 
+					form-helper 
+			        fields='content.user' 
+			        form-footer='Agregar Usuario'
+			        form-save = 'createUser'
+			        object = 'user'
+			        form-title='Nuevo Usuario'
+			       	modal='true'
+			        >
+			    </div>	
+			</div>
+		</div>
+	</div>
+</div>
