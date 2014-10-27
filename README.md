@@ -49,6 +49,8 @@ module.exports = {
 
     `node app.js`
 
+7. Inicialmente se puede acceder al software con el user/pass: admin/admin posteriormente se puede cambiar la contraseña y generar nuevos usuarios.
+
 ##Frontend
 
 Se puede instalar el frontend siguiendo los mismos pasos de este documento reemplazando el repositorio en el punto 1 con:
