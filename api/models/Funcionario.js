@@ -20,12 +20,13 @@ module.exports = {
         clave_puesto : 'string',
         nombre_puesto : 'string',
         email : 'string',
+        icon:'json',
         viajes : {
             collection : 'Viaje',
             via : 'funcionario'
         }
     },
-    afterUpdate : function(funcionario,cb) {
-        Common.sendFuncionarioUpdate(funcionario,cb);
-    }
+    /*afterUpdate : function(funcionario,cb) {
+        //Common.sendFuncionarioUpdate(funcionario,cb);
+    }*/
 };

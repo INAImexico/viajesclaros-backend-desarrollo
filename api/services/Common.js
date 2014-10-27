@@ -1,3 +1,5 @@
+var sendgrid = require('sendgrid')('jafetgonzalez','chachach1');
+
 module.exports.view = function(view,data,req){
 	data = data || {};
 	data.page = data.page || {};

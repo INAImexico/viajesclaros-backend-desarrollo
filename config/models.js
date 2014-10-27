@@ -11,7 +11,7 @@
 
 module.exports.models = {
   connection: 'mysql-connection',
-  migrate: 'alter',
+  migrate: 'safe',
   autoCreatedAt: false,
   autoUpdatedAt: false,
   updateAvatar : function(req,opts,cb){

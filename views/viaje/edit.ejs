@@ -1,0 +1,33 @@
+<script type='text/javascript'>
+    window.viaje = <%- JSON.stringify(viaje) %>;
+    window.content = <%- JSON.stringify(_content) %>;
+</script>
+<div ng-controller='viajeEditCTL'>
+    <div class="span4 profile-left profileEdit">
+        <div profile-image 
+            object='viaje' 
+            update-method='/viaje/updateIcon' 
+            delete-method='/viaje/destroyIcon' 
+            image-attr='icon' 
+            dir='viajes'>
+        </div>
+   
+    </div>
+    <div class="span6">
+        <div form-helper 
+            fields='content.viaje' 
+            object='viaje' 
+            action='/viaje/save' 
+            form-title='INFORMACIÓN BASICA'>
+        </div> 
+
+        <div form-helper 
+            fields='content.viajePuesto' 
+            object='viaje' 
+            action='/viaje/save' 
+            form-title='Información de puesto'
+        >
+        </div> 
+
+    </div>
+</div>

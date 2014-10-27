@@ -60,5 +60,16 @@ module.exports = {
 			res.json(funcionario);
 		});
 	},
+	update : function(req,res){
+    	var form = req.params.all();
+    	var id = form.id;
+    	Funcionario.update({id:id},form,function(e,funcionario){
+    		if(e) throw(e);
+    		Funcionario.findOne(funcionario[0].id).exec(function(e,funcionario){
+    			if(e) throw(e);
+    			res.json(funcionario);
+    		});
+    	});
+    },
 };
 
